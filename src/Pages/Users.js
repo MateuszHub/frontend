@@ -1,6 +1,5 @@
 import React from 'react';
 import styles from './Users.module.scss';
-import { Link } from 'react-router-dom';
 import UsersService from '../Api/UsersService';
 import LightContentBox from '../Ui/LightContentBox';
 import Table from '../Ui/Table';
@@ -19,7 +18,6 @@ class Users extends React.Component {
 
     componentDidMount() {
         this.usersSerivce.getAllUsers().then((users) => {
-            console.log(users)
             this.setState((state) => ({
                 loaded: true,
                 users: users

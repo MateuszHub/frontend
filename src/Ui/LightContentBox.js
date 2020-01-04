@@ -1,10 +1,7 @@
-import React, { Children } from 'react';
+import React from 'react';
 import styles from './LightContentBox.module.scss';
 
 class LightContentBox extends React.Component {
-    constructor(props) {
-        super(props)
-    }
     render() {
         return (
                 <div className={styles.content}>

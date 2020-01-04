@@ -1,5 +1,4 @@
 import React from 'react';
-import LoginForm from './LoginForm'
 import './Info.scss';
 import LightContentBox from '../Ui/LightContentBox';
 

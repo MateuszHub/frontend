@@ -2,11 +2,6 @@ import React from 'react';
 import styles from './ChatMessage.module.scss';
 
 class ChatMessage extends React.Component {
-    constructor(props) {
-        super(props);
-
-    }
-
     render() {
         return (
             <div className={styles.message}>

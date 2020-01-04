@@ -54,6 +54,7 @@ class Chat extends React.Component {
         let chat = this.state.chat.map(m => {
             if (m)
                 return <div key={m.id} className="message" ref={r => this.handleRef(r)}><ChatMessage {...m}></ChatMessage></div>
+            return null;
         });
         return (
             <div className="container">

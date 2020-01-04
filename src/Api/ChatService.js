@@ -6,7 +6,7 @@ export default class ChatService {
     constructor() {
         this.msgUniqueId = 0;
         this.chat = [];
-        chatInput.map(message => { this.addMessage(message) });
+        chatInput.forEach(message => { this.addMessage(message) });
         this.counter = 0;
     }
 

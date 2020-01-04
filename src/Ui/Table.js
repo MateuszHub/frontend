@@ -1,4 +1,4 @@
-import React, { Children } from 'react';
+import React from 'react';
 import styles from './Table.module.scss';
 
 class Table extends React.Component {
@@ -11,7 +11,6 @@ class Table extends React.Component {
                 element.id = uniqueId++;
                 return element;
             });
-        console.log(data)
         this.state = {
             headers: props.headers,
             data: data,
@@ -56,7 +55,6 @@ class Table extends React.Component {
 
     meetsFilters(data) {
         let results = this.state.activeFilters.map(filter => filter.fun(data))
-        console.log(results)
         return results.indexOf(false) === -1;
     }
 
@@ -76,7 +74,7 @@ class Table extends React.Component {
     createTBody() {
         let body = this.state.data && this.state.data.map(data => {
             let row = this.state.keysToDataProps.map(key => (
-                <td>{data[key]}</td>
+                <td key={key}>{data[key]}</td>
             ));
             if (this.meetsFilters(data))
                 return (<tr key={data.id}>{row}</tr>);
@@ -87,7 +85,7 @@ class Table extends React.Component {
 
     createFilters() {
         let filters = this.state.filters.map(filter => {
-            return <button className={styles.filter + " " + (this.isFilterActive(filter) ? styles.activeFilter: null)}  onClick={this.toggleFiter.bind(this, filter)}>{filter.desc}</button>
+            return <button key={filter.id} className={styles.filter + " " + (this.isFilterActive(filter) ? styles.activeFilter : null)} onClick={this.toggleFiter.bind(this, filter)}>{filter.desc}</button>
         })
         if (filters.length > 0)
             return (<div className={styles.filtersGroup}>{filters}</div>)
@@ -95,7 +93,7 @@ class Table extends React.Component {
     }
 
     isFilterActive(filter) {
-        if (this.state.activeFilters.filter(f => f.id == filter.id).length > 0)
+        if (this.state.activeFilters.filter(f => f.id === filter.id).length > 0)
             return true;
         return false;
     }
@@ -120,7 +118,6 @@ class Table extends React.Component {
     }
 
     render() {
-        console.log(this.state.activeFilters)
         return (
             <div>
                 {this.createFilters()}

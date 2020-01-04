@@ -10,7 +10,6 @@ export default class UsersService {
         let output = data.split(/\r?\n/);
         output.splice(0, 1);
         output = output.filter(data => data.trim().length > 0);
-        let users = [];
         return output.map(line => {
             let user = line.split(",");
             return new User(...user);
