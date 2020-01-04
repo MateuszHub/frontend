@@ -1,0 +1,41 @@
+.table {
+  margin: auto;
+  color: white;
+  border-collapse: collapse;
+  th {
+    cursor: pointer;
+    &:hover {
+      background: #333;
+    }
+  }
+  tr,
+  th,
+  td {
+    min-width: 200px;
+    padding: 10px;
+    border: 1px solid gray;
+  }
+}
+
+.filter {
+  background: #777;
+  box-shadow: 5px 5px 5px #333;
+  font-size: 1em;
+  color: white;
+  padding: 5px;
+  border: none;
+  margin: 10px 5px;
+  cursor: pointer;
+  &:hover {
+    box-shadow: inset 2px 2px 3px #333;
+  }
+}
+.activeFilter {
+  background: rgb(64, 117, 64);
+}
+.filtersGroup {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

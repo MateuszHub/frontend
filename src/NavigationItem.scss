@@ -1,0 +1,24 @@
+.link{
+  margin-left: 10px;
+  text-decoration: none;
+  color: rgb(222, 222, 222);
+  &:hover{
+    color: dodgerblue;
+  }
+}
+
+.mainItem{
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  padding: 10px;
+  p{
+    color: rgb(244, 244, 244);
+    font-weight: bold;
+  }
+  &:hover{
+    background: #333;
+  }
+  flex-flow: column;
+
+}
